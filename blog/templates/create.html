@@ -1,0 +1,47 @@
+{% load static %}
+
+<link rel="stylesheet" href="{%static 'create.css' %}" />
+
+<div class="main-cover">
+  <div class="navbar">
+    <div class="logo">
+      <img src="{{ MEDIA_URL }}logo.png" alt="logo" />
+    </div>
+    <div class="navbar-options">
+      <ul class="n-options-list">
+        <li class="n-option"><a href="/">Home</a></li>
+        <li class="n-option"><a href="">Create Blog</a></li>
+        <li class="n-option"><a href="">Contact us</a></li>
+        <li class="n-option"><a href="">Logout</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="body-cover">
+    <h1>Create Blog</h1>
+
+    <hr class="line" />
+
+    <div class="content-block">
+      <form action="{% url 'create-blog' %}" method="POST">
+        {% csrf_token %}
+
+        <div class="input-block">
+          <p>Title:</p>
+          <input class="input-area" type="text" name="title" />
+        </div>
+
+        <div class="input-block">
+          <p>Category:</p>
+          <input class="input-area" type="text" name="category" />
+        </div>
+
+        <div class="input-block">
+          <p>Description:</p>
+          <textarea rows="25" , cols="100" name="description"></textarea>
+        </div>
+
+        <button type="submit" class="submit-button">Submit Blog</button>
+      </form>
+    </div>
+  </div>
+</div>
