@@ -76,7 +76,31 @@ def register(request):
   return render(request ,  'register.html' , {'MEDIA_URL' : settings.MEDIA_URL})
 
 def login(request):
+
+  if request.method == "POST":
+    
+    Log_username = request.POST['username']
+    Log_password = request.POST['password']
+
+    user = auth.authenticate(username = Log_username , password = Log_password)
+
+    if user is not None:
+
+      auth.login(request , user)
+      return redirect('/')
+    
+    else:
+
+      messages.info(request , 'User does not exist')
+      return redirect('login')
+
+  else:  
  
-  return render(request ,   'login.html' , {'MEDIA_URL' : settings.MEDIA_URL})
+    return render(request ,   'login.html' , {'MEDIA_URL' : settings.MEDIA_URL})
 
  
+def logout(request):
+
+  auth.logout(request)
+
+  return redirect('login')

@@ -1,0 +1,41 @@
+{% load static %}
+
+<link rel="stylesheet" href="{%static 'register.css' %}" />
+
+<div class="main-cover">
+  <div class="navbar">
+    <div class="logo">
+      <img src="{{ MEDIA_URL }}logo.png" alt="logo" />
+    </div>
+  </div>
+  <div class="body-cover">
+    <div class="content-block">
+      <div class="left-content-block">
+        <div class="l-image-container">
+          <img src="{{MEDIA_URL}}BlogIT logo.png" alt="BlogIT logo" />
+        </div>
+      </div>
+
+      <div class="right-content-block">
+        <h2>Welcome to BlogIT</h2>
+        <form action="{% url 'login' %}" method="POST">
+          {% csrf_token%}
+
+          <div class="input-block">
+            <p>Username:</p>
+            <input class="input-area" type="text" name="username" />
+          </div>
+
+          <div class="input-block">
+            <p>Password:</p>
+            <input class="input-area" type="password" name="password" />
+          </div>
+
+          <button type="submit" class="signin-button">Log In</button>
+
+          <p>Don't have an account? <a href="register">Sign In</a></p>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
