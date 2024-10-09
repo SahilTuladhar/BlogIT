@@ -19,23 +19,43 @@
   <div class="body-cover">
     <h1>Hi {{user.username}} , Welcome to your blog</h1>
     <div class="content-block">
-      <div class="blog-post">
-        <div class="image-cover">img</div>
-        <div class="category">Cats</div>
-        <div class="title">Title</div>
-        <div class="description">Short Desc</div>
-      </div>
-      <div class="blog-post">
-        <div class="image-cover">img</div>
-        <div class="category">Cats</div>
-        <div class="title">Title</div>
-        <div class="description">Short Desc</div>
-      </div>
-      <div class="blog-post">
-        <div class="image-cover">img</div>
-        <div class="category">Cats</div>
-        <div class="title">Title</div>
-        <div class="description">Short Desc</div>
+
+      {% if not blogs%}
+
+         <div> NO Blogs Posted Yet</div>
+
+      {% else %}
+
+      {% for blog in blogs %}
+       
+         <div class="blog-post">
+          <a href="{% url 'post' blog.id %}">
+            <div class="image-cover">
+              <img src="{{MEDIA_URL}}{{blog.blog_image}}" alt="" />
+            </div>
+            <div class="category">
+              <p>{{blog.category}}</p>
+            </div>
+            
+             <div class="title">
+              <p>{{blog.title}}</p>
+            </div>
+            
+            <div class="description">
+              <p>
+                {{blog.description|truncatewords:42}}
+              </p>
+            </div>
+            </a>
+          </div>
+     
+          
+      {% endfor %}
+
+      {% endif %}
+
+      
+     
       </div>
     </div>
   </div>

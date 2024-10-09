@@ -15,10 +15,10 @@ body {
   display: flex;
   flex-direction: column;
   background-color: #e9f3fa;
+  background-color: #31315c;
 }
 
 .navbar {
-  border: 1px solid black;
   height: 7vh;
   width: 100%;
   display: flex;
@@ -91,43 +91,66 @@ body {
   align-items: center;
   margin-left: 2%;
   font-weight: lighter;
+  color: #7a7ab3;
 }
 
 .content-block {
   /* border: 1px solid black; */
   display: flex;
-  padding: 1.5%;
+  padding: 2%;
   flex-direction: column;
   margin: auto;
   justify-content: center;
   align-items: center;
-  border-radius: 12px;
-  background-color: white;
+  border-radius: 22px;
+  background-color: #31315c;
+  box-shadow: 2px 2px 20px #47477f;
+}
+
+.content-block p {
+  color: #7a7ab3;
+}
+
+.upper-content-block {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.upper-content-block .input-block {
+  display: flex;
+  /* border: 1px solid black; */
+  width: 40%;
+  justify-content: center;
+  align-items: center;
 }
 
 .line {
-  background-color: #d0e1ed;
-  border: 0.1px solid #d0e1ed;
+  background-color: #7a7ab3;
+  border: 0.1px solid #7a7ab3;
   width: 98%;
   margin-top: -0.7%;
   margin-bottom: 1%;
 }
 
 .input-area {
-  width: 30%;
-  padding: 1%;
+  width: 100%;
+  padding: 3%;
+  margin-left: 3%;
   border-radius: 12px;
-  background-color: #f2f9fe;
+  background-color: #b1b1ea;
   border: none;
   transition: background-color 1s;
   border: 1px solid #d0e1ed;
 }
 
-textarea {
-  border-radius: 12px;
+.content-block textarea {
+  border-radius: 22px;
   border: none;
-  background-color: #f2f9fe;
-  padding: 1%;
+  background-color: #b1b1ea;
+  padding: 2%;
+  margin-right: 20px;
   transition: background-color 1s, border 1s;
 }
 

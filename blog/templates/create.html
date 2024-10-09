@@ -22,17 +22,28 @@
     <hr class="line" />
 
     <div class="content-block">
-      <form action="{% url 'create-blog' %}" method="POST">
+      <form
+        action="{% url 'create-blog' %}"
+        method="POST"
+        enctype="multipart/form-data"
+      >
         {% csrf_token %}
 
-        <div class="input-block">
-          <p>Title:</p>
-          <input class="input-area" type="text" name="title" />
+        <div class="upper-content-block">
+          <div class="input-block">
+            <p>Title:</p>
+            <input class="input-area" type="text" name="title" />
+          </div>
+
+          <div class="input-block">
+            <p>Category:</p>
+            <input class="input-area" type="text" name="category" />
+          </div>
         </div>
 
         <div class="input-block">
-          <p>Category:</p>
-          <input class="input-area" type="text" name="category" />
+          <p>Upload Image:</p>
+          <input type="file" name="image" , accept="image/*" />
         </div>
 
         <div class="input-block">

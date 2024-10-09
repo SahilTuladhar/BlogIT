@@ -1,0 +1,34 @@
+{% load static %}
+
+<link rel="stylesheet" href="{%static 'post.css' %}" />
+
+<div class="main-cover">
+  <div class="navbar">
+    <div class="logo">
+      <img src="{{ MEDIA_URL }}logo.png" alt="logo" />
+    </div>
+    <div class="navbar-options">
+      <ul class="n-options-list">
+        <li class="n-option"><a href="/">Home</a></li>
+        <li class="n-option"><a href="create-blog">Create Blog</a></li>
+        <li class="n-option"><a href="">Contact us</a></li>
+        <li class="n-option"><a href="logout">Logout</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="body-cover">
+    <h1>Hi {{user.username}} , Welcome to your blog</h1>
+    <div class="content-block">
+      <div class='upper-content-block'>
+      <p>{{blog.title}}</p>
+      </div>
+
+      <hr class="line">
+
+      <div class="lower-content-block">
+       <p> {{blog.description}}</p>
+      </div>
+     </div>
+    </div>
+  </div>
+</div>

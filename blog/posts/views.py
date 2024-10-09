@@ -21,9 +21,14 @@ def create_blog(request):
     Category = request.POST['category']
     Description = request.POST['description']
 
+    if 'image' in request.FILES:
+      Image = request.FILES['image']
+    else:
+      Image = 'images/default.png'
+
     # create a new blog instance
 
-    blog = Blog(title = Title , category = Category , description = Description)
+    blog = Blog(title = Title , category = Category , description = Description, blog_image = Image)
   
     # Save the new Blog Instance
     blog.save()
@@ -104,3 +109,9 @@ def logout(request):
   auth.logout(request)
 
   return redirect('login')
+
+def post(request , post_no):
+
+  blog = Blog.objects.get(id = post_no)
+
+  return render(request , 'post.html' , {'MEDIA_URL' : settings.MEDIA_URL , 'blog' : blog})

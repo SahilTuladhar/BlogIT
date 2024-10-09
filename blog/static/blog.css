@@ -88,6 +88,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  color: #7a7ab3;
 }
 
 .content-block {
@@ -95,47 +96,102 @@ body {
   display: flex;
   flex-wrap: wrap; /* moves overflow content to the next line*/
   justify-content: space-around;
-  align-items: flex-start;
+  align-items: center;
   padding: 0.5%;
   flex-grow: 1;
   overflow-y: auto;
 }
 
 .blog-post {
-  border: 1px solid blue;
-  min-width: 25%;
-  min-height: 70%;
+  width: 20%;
+  height: 70%;
   margin: 0 1% 1% 1%;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  border-radius: 12px;
+  /* justify-content: center;
+  align-items: center; */
+  border-radius: 22px;
   background-color: white;
+  box-shadow: 2px 2px 20px #47477f;
 }
 
-.image-cover {
+/* .image-cover {
   flex: 40;
   width: 100%;
-  border: 1px solid red;
+  height: 200px;
+
+  border: 3px solid red;
+}
+
+.image-cover img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+} */
+
+.image-cover {
+  width: 100%; /* Fixed width */
+  height: 250px; /* Fixed height */
+  /* border: 3px solid red; */
+  overflow: hidden; /* In case the image is larger than the container */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1%;
+  border-radius: 22px 22px 0 0;
+}
+
+.image-cover img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* This will make sure the image covers the entire container */
 }
 
 .category {
-  flex: 5;
   width: 100%;
-  border: 1px solid purple;
+  display: flex;
+  align-items: center;
+  height: 8%;
+  color: #86b9ce;
+}
+
+.category p {
+  font-weight: 800;
+  margin-left: 3%;
+  font-size: 18px;
+  text-transform: uppercase;
 }
 
 .title {
-  flex: 15;
   width: 100%;
-  border: 1px solid orange;
+  height: auto;
+  display: flex;
+  align-items: center;
+  margin-top: -5%;
+  /* border: 1px solid black; */
+}
+
+.title p {
+  font-size: 27px;
+  margin-left: 3%;
+  font-weight: bold;
+  color: #31315c;
+  text-transform: capitalize;
+  /* font-family: "Courier New", Courier, monospace; */
 }
 
 .description {
-  flex: 40;
-  width: 100%;
-  border: 1px solid green;
+  /* width: 100%; */
+  display: flex;
+  align-items: center;
+  padding: 0 3%;
+  /* border: 1px solid green; */
+  flex-grow: 1;
+  opacity: 60%;
+  line-height: 1.5;
+  margin-top: -5%;
+  font-size: 14px;
+  color: #31315c;
 }
 
 @media (max-width: 768px) {
@@ -148,4 +204,8 @@ body {
   .blog-post {
     min-width: 100%;
   }
+}
+
+a {
+  text-decoration: none;
 }
