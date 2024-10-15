@@ -11,7 +11,7 @@
       <ul class="n-options-list">
         <li class="n-option"><a href="/">Home</a></li>
         <li class="n-option"><a href="create-blog">Create Blog</a></li>
-        <li class="n-option"><a href="">Contact us</a></li>
+        <li class="n-option"><a href="">My Blogs</a></li>
         <li class="n-option"><a href="logout">Logout</a></li>
       </ul>
     </div>
@@ -20,13 +20,26 @@
     <h1>Hi {{user.username}} , Welcome to your blog</h1>
     <div class="content-block">
       <div class='upper-content-block'>
-      <p>{{blog.title}}</p>
+       <div class="image-container">
+        <img src="{{MEDIA_URL}}{{blog.blog_image}}" alt="post image">
+       </div>
+
+      <div class="info-container">
+         <p class="title">{{blog.title}}</p>
+       <div class="category">
+              <p>{{blog.category}}</p>
+            </div>
+
+      </div>
+      
       </div>
 
-      <hr class="line">
-
+      
+ <hr class="line">
       <div class="lower-content-block">
+        
        <p> {{blog.description}}</p>
+
       </div>
      </div>
     </div>

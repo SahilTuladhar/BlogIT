@@ -7,5 +7,6 @@ class Blog(models.Model):
  category = models.CharField(max_length=80)
  description = models.TextField(max_length=1000)
  blog_image = models.ImageField(blank = 'true' , default= 'default.png' , upload_to='images/')
+ created_by = models.TextField()
 
 
